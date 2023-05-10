@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ustis.fitnesscentrefront.controller.RegisterController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Номер телефона"/>
+    <TextField fx:id="phoneNumberTF"/>
+    <Label text="Пароль"/>
+    <PasswordField fx:id="passwordTF"/>
+    <Label text="Повтор пароля"/>
+    <PasswordField fx:id="passwordConfirmationTF"/>
+    <Label text="ФИО"/>
+    <TextField fx:id="fullNameTF"/>
+    <Label text="Дата рождения"/>
+    <DatePicker fx:id="birthdayDateDP"/>
+    <Label text="Пол"/>
+    <ChoiceBox fx:id="genderCB">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Мужской"/>
+                <String fx:value="Женский"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+
+    <Button text="Зарегистрироваться" onAction="#onRegisterButtonClick"/>
+    <Button text="Вернуться ко входу в аккаунт" onAction="#onReturnToLoginClick"/>
+</VBox>
