@@ -34,7 +34,6 @@ public class RegisterController {
     @FXML
     protected void onRegisterButtonClick() throws IOException {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        // TODO проврека на пароль
         try {
             new AuthApi().register(new RegisterRequest(
                     phoneNumberTF.getText(),

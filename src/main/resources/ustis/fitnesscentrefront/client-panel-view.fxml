@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="200.0" prefWidth="1264.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ustis.fitnesscentrefront.controller.ClientPanelController">
+    <Label text="" fx:id="balanceL"/>
+    <Label text="" fx:id="cardPrice"/>
+    <Button text="Купить карту" fx:id="buyCardBTN" onAction="#onBuyCardClick"/>
+    <Button text="Войти в зал" fx:id="enterCentreBTN" onAction="#onEnterCentreClick"/>
+    <Button text="Выйти из зала" fx:id="leaveCentreBTN" onAction="#onLeaveCentreClick"/>
+</VBox>

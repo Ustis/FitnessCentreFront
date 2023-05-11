@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 public class StateManager {
     private Stage stage;
 
-    private String token;
+    private String token = null;
 
     private StateManager() {
     }

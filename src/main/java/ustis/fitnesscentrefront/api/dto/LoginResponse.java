@@ -4,9 +4,12 @@ public class LoginResponse {
     public String type;
     public String accessToken;
 
-    public LoginResponse(String type, String accessToken) {
+    public String roles;
+
+    public LoginResponse(String type, String accessToken, String roles) {
         this.type = type;
         this.accessToken = accessToken;
+        this.roles = roles;
     }
 
     public String getType() {
@@ -23,5 +26,13 @@ public class LoginResponse {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
+    }
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="200.0" prefWidth="1264.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ustis.fitnesscentrefront.controller.AdminPanelController">
+    <TableView fx:id="clientTableView" editable="true" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="clientId" editable="false" prefWidth="80.0" text="id" />
+            <TableColumn fx:id="clientPhoneNumber" onEditCommit="#changePhoneNumberCellEvent" prefWidth="150.0" text="Номер телефона" />
+            <TableColumn fx:id="clientFullName" onEditCommit="#changeFullNameCellEvent" prefWidth="150.0" text="ФИО" />
+            <TableColumn fx:id="clientBirthdayDate" onEditCommit="#changeBirthdayDateCellEvent" prefWidth="220.0" text="Дата рождения" />
+            <TableColumn fx:id="clientGender" onEditCommit="#changeGenderCellEvent" prefWidth="220.0" text="Пол" />
+            <TableColumn fx:id="clientRoles" onEditCommit="#changeRolesCellEvent" prefWidth="220.0" text="Роли" />
+            <TableColumn fx:id="clientBalance" onEditCommit="#changeBalanceCellEvent" prefWidth="220.0" text="Баланс" />
+        </columns>
+    </TableView>
+</VBox>

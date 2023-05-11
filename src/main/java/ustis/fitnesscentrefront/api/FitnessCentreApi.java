@@ -1,11 +1,12 @@
 package ustis.fitnesscentrefront.api;
 
 import okhttp3.*;
+import ustis.fitnesscentrefront.api.interceptor.AccessTokenInterceptor;
 
 import java.io.IOException;
 
 public class FitnessCentreApi {
-    private final OkHttpClient client = new OkHttpClient.Builder()
+    private OkHttpClient client = new OkHttpClient.Builder()
             .build();
 
     private final String baseUrl = "http://localhost:8080/api";
@@ -35,7 +36,9 @@ public class FitnessCentreApi {
     }
 
     public SimpleResponse get(String url) throws IOException {
-        Request request = new Request.Builder()
+        Request request;
+
+        request = new Request.Builder()
                 .url(baseUrl + url)
                 .build();
 
@@ -50,10 +53,23 @@ public class FitnessCentreApi {
         return execute(request);
     }
 
+    public SimpleResponse post(String url) throws IOException {
+        Request request;
+        RequestBody body = RequestBody.create(null, new byte[]{});
+
+        request = new Request.Builder()
+                .url(baseUrl + url)
+                .post(body)
+                .build();
+
+        return execute(request);
+    }
+
     public SimpleResponse post(String url, String jsonBody) throws IOException {
+        Request request;
         RequestBody body = RequestBody.create(jsonBody, JSON);
 
-        Request request = new Request.Builder()
+        request = new Request.Builder()
                 .url(baseUrl + url)
                 .post(body)
                 .build();
@@ -62,9 +78,10 @@ public class FitnessCentreApi {
     }
 
     public SimpleResponse put(String url, String jsonBody) throws IOException {
+        Request request;
         RequestBody body = RequestBody.create(jsonBody, JSON);
 
-        Request request = new Request.Builder()
+        request = new Request.Builder()
                 .url(baseUrl + url)
                 .put(body)
                 .build();
@@ -79,5 +96,11 @@ public class FitnessCentreApi {
                 .build();
 
         return execute(request);
+    }
+
+    public void setAccessTokenInterceptor() {
+        client = new OkHttpClient.Builder()
+                .addInterceptor(new AccessTokenInterceptor())
+                .build();
     }
 }
